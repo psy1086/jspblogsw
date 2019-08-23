@@ -17,9 +17,10 @@
 		script.println("</script>");
 		script.close();
 		return;
-	}if(userId.equals("admin")) {
+	}if(!(userId.equals("admin")) ) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
+		System.out.println(userId);
 		script.println("alert('관리자만 사용 가능합니다.');");
 		script.println("location.href='userLogin.jsp';");
 		script.println("</script>");
@@ -35,7 +36,16 @@
 
 	UserDAO userDAO = new UserDAO();
 	
-	if(userId.equals(userDAO.getUserId(user))) {
+	if(userId.equals("admin")) {
+		if(user.equals("admin")) {
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('관리자입니다.');");
+			script.println("history.back()");
+			script.println("</script>");
+			script.close();
+			return;
+		}
 		int result = new UserDAO().delete(user);
 		if(result == 1) {
 			PrintWriter script = response.getWriter();
@@ -58,7 +68,7 @@
 	}else {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("alert('작성자만 삭제 가능합니다.');");
+		script.println("alert('관리자만 삭제 가능합니다.');");
 		script.println("history.back()");
 		script.println("</script>");
 		script.close();

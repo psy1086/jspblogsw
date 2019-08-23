@@ -102,9 +102,9 @@
                   <input type="text" name="userEmail" id="inputEmail" class="form-control" placeholder="Email"  value="<%= mypageDTO.getUserEmail()%>" required>
                   <label for="inputId">Email</label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">SUBMIT</button>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Changing</button>
                 </form>
-                <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" onclick = "location.href='secessionAction.jsp'">SUBMIT</button>
+                <button class="btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2" onclick = "location.href='secessionAction.jsp'">Withdrawal</button>
               
             </div>
           </div>

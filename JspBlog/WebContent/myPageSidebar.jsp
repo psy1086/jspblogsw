@@ -57,16 +57,16 @@
           <span>Home</span></a>
       	</li>
        <li class="nav-item">
-        <a class="nav-link" href="tables.jsp">
-          <i class="fas fa-fw fa-table"></i>
-          <span>User</span></a>
+        <a class="nav-link" href="myPage.jsp">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>MyPage</span></a>
       	</li>
 <% if(userId.equals("admin")) { %>
 
       <li class="nav-item">
-        <a class="nav-link" href="charts.jsp">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Chart</span></a>
+        <a class="nav-link" href="tables.jsp">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>User</span></a>
       </li>
 <%} %>
       <hr class="sidebar-divider d-none d-md-block">

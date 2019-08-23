@@ -1,5 +1,6 @@
 package user;
 
+import java.security.interfaces.RSAKey;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -147,5 +148,37 @@ public class UserDAO {
 			try{ if(rs != null) rs.close();} catch(Exception e) {e.printStackTrace();}
 		}
 			return -1;
+	}
+	
+	public ArrayList<UserDTO> userList() {
+		ArrayList<UserDTO> userList = null;
+		String SQL ="SELECT * FROM user";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DButil.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			userList = new ArrayList<UserDTO>();
+			while(rs.next()) {
+				UserDTO userDTO = new UserDTO(
+						rs.getString(1),
+						rs.getString(2),
+						rs.getString(3),
+						rs.getString(4),
+						rs.getString(5),
+						rs.getBoolean(6)
+						);
+				userList.add(userDTO);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally{
+			try{ if(conn != null) conn.close();} catch(Exception e) {e.printStackTrace();}
+			try{ if(pstmt != null) pstmt.close();} catch(Exception e) {e.printStackTrace();}
+			try{ if(rs != null) rs.close();} catch(Exception e) {e.printStackTrace();}
+		}
+		return userList;
 	}
 }

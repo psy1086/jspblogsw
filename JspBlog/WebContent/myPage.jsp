@@ -64,7 +64,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-9 col-lg-8 mx-auto">
-							<h3 class="login-heading mb-4"><%= userId %>Input your PassWord</h3>
+							<h3 class="login-heading mb-4"><%= userId %> Input your PassWord</h3>
 							<form method="post" action="myPageLoginAction.jsp">
 								<div class="form-label-group">
 									<input type="password" name="userPassword" id="inputPassword" class="form-control" placeholder="Password" required>

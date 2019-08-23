@@ -42,8 +42,8 @@
 		return;
 	}
 	
-	String host = "http://localhost:8092/JspBlog/";	
-	String from = "andrea122245@gmail.com"; 
+	String host = "http://localhost:8092/JspBlog/";	// 웹 주소
+	String from = "andrea122245@gmail.com"; // 구글이메일계정
 	String to = userDAO.getUserEmail(userId);
 	String subject = "강의평가를 위한 이메일 인증 메일입니다.";
 	String content = "인증을 진행하시려면 다음 링크를 눌러주세요" +
@@ -52,12 +52,12 @@
 	//프로퍼티 값 설정
 	Properties p = new Properties();
 	p.put("mail.smtp.user", from);
-	p.put("mail.smtp.host", "smtp.googlemail.com");  
-	p.put("mail.smtp.prot", 465); 
+	p.put("mail.smtp.host", "smtp.googlemail.com"); // 구글 이메일 
+	p.put("mail.smtp.prot", 465); // 구글서비스에서 제공하는 기본 포트
 	p.put("mail.smtp.starttls.enalbe", "true");
 	p.put("mail.smtp.auth", "true");
 	p.put("mail.smtp.debug", "true");
-	p.put("mail.smtp.socketFactory.port", 465);
+	p.put("mail.smtp.socketFactory.port", 465);	// 구글 서비스에서 제공하는 기본 포트
 	p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 	p.put("mail.smtp.socketFactory.fallback", "false");
 		
@@ -100,7 +100,7 @@
 
 	<section class="container mt-3" style="max-width:560px;">
 		<div class="alert alert-success mt-4" role="alert">
-			<a href="https://"<%= addr %>>이메일 인증 메일 전송이 되었습니다. 확인하러 가기</a>
+			<a href="http://"<%= addr %>>이메일 인증 메일 전송이 되었습니다. 확인하러 가기</a>
 		</div>
 	</section>
 	
